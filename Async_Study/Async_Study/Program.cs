@@ -10,6 +10,14 @@ namespace Async_Study
     {
         static void Main(string[] args)
         {
+            Greeting("Christ");
+        }
+
+        static string Greeting( string name )
+        {
+            Task.Delay(3000).Wait();
+
+            return "Hello"+ name;
         }
     }
 }
