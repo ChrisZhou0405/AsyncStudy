@@ -10,14 +10,31 @@ namespace Async_Study
     {
         static void Main(string[] args)
         {
-            Greeting("Christ");
+
+            CallerwithAsync();
+
         }
 
         static string Greeting( string name )
         {
-            Task.Delay(3000).Wait();
-
+           Task task1= Task.Delay(3000);
+            task1.Wait();
+        
             return "Hello"+ name;
         }
+
+        static Task<string> GreetingAsync(string name)
+        {
+            return Task.Run<string>(()=> { return Greeting(name); });
+        }
+
+        private async static  void CallerwithAsync()
+        {
+            int a = 1 + 2;
+            string result = await GreetingAsync("House");
+           
+            Console.WriteLine(result);
+        }
+
     }
 }
