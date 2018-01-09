@@ -25,7 +25,8 @@ namespace Async_Study
 
         static Task<string> GreetingAsync(string name)
         {
-            return Task.Run<string>(()=> { return Greeting(name); });
+            Task<string> mytask= Task.Run<string>(()=> { return Greeting(name); });
+            return mytask;
         }
 
         private async static  void CallerwithAsync()
