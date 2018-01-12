@@ -31,7 +31,6 @@ namespace Async_Study
 
         private async static  void CallerwithAsync()
         {
-            int a = 1 + 2;
             string result = await GreetingAsync("House");
            
             Console.WriteLine(result);
